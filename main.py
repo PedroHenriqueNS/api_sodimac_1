@@ -2,7 +2,6 @@ from flask import Flask
 from flask_restful import Api, Resource
 from parsel import Selector
 
-import re
 import json
 
 import requests
