@@ -35,12 +35,20 @@ def getProductData(productId: str):
     return list(find_json_objects(text=script_text))
 
 
-class GetProduct(Resource):
-    def get(self, id):
-        return {"data": getProductData(id)}
+# class GetProduct(Resource):
+#     def get(self, id):
+#         return {"data": getProductData(id)}
 
 
-api.add_resource(GetProduct, "/product/<string:id>")
+# api.add_resource(GetProduct, "/product/<string:id>")
 
-if __name__ == '__main__':
-    app.run(port=5000)
+# if __name__ == '__main__':
+#     app.run()
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+@app.route('/product/<string:id>')
+def get(self, id):
+    return {"data": getProductData(id)}
